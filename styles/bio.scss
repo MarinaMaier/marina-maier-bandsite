@@ -1,1 +1,5 @@
-$primary-color-black: #323232;
+@use "/styles/partials/typografy";
+
+p {
+    font-family: 'Avenir';
+}

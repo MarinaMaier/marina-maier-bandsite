@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","sourcesContent":[]}
+{"version":3,"sourceRoot":"","sources":["../../bio.scss"],"names":[],"mappings":"AAEA;EACI","sourcesContent":["// @use \"/styles/partials/typografy\";\n\np {\n    font-family: 'Avenir';\n}\n"]}
