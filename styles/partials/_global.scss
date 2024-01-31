@@ -1,9 +1,42 @@
-$primary-text-color-black: #323232;
-$secondary-text-color-silver: #AFAFAF;
+$primary-color-black: #323232;
+$secondary-color-silver: #AFAFAF;
 $primary-text-color-white: #FFFFFF;
 $hover-state-color: #000000;
 $divider-line: #E1E1E1;
 $alternative-background-color: #FAFAFA;
-$secondary-family-font: 'AvenirNextLTPro-Demi';
-$third-family-font: 'AvenirNextLTPro-Bold';
+$secondary-family-font: 'Avenir Demi';
+$third-family-font: 'Avenir Bold';
 $m-h1-text-size: 24px;
+
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1279px;
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+p {
+  font-family: 'Avenir Regular';
+}
+
+h1 {
+  font-family: 'Avenir Bold';
+}
+
+h2 {
+  font-family: 'Avenir Demi';
+}
+ul {
+  li {
+    font-family: 'Avenir Regular';
+  }
+}
