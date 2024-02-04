@@ -46,50 +46,11 @@ body {
 }
 
 @include tablet {
-    .header { 
-        flex-direction: row;
-        align-items: center;
-        padding-left: 36px;
-        gap: 10px;
-        &__image {
-            margin: 0;
-        } 
-        &__nav-bar {
-            &__list {
-                gap: 10px;
-                &__item1 {
-                    padding: 16px;
-                }
-                &__item2 {
-                    padding: 16px;
-                }
-            }
-        }
-    }
+    @include header-tablet;
 }
-// Maintaining Desktop @media queries to handle 
-// any eventuality that may arise in the future.
+
 @include desktop {
-    .header {
-        flex-direction: row;
-        align-items: center;
-        padding-left: 5rem;
-        gap: 20px;
-        &__image {
-            margin: 0;
-        } 
-        &__nav-bar {
-            &__list {
-                gap: 20px;
-                &__item1 {
-                    padding: 16px;
-                }
-                &__item2 {
-                    padding: 16px;
-                }
-            }
-        }
-    }
+    @include header-desktop;
 }
 
 .hero {
@@ -111,18 +72,14 @@ body {
      &__heading {
     text-align: left;
     color: #FFFFFF;
-    padding-left: 16px;
+    padding-left: 1rem;
         @include tablet {
-        font-family: 'Avenir Bold';
-        font-size: 3.75rem;
-        line-height: 4.25rem;   
-        padding-left: 2rem;
+            @include hero-heading-td;  
+            padding-left: 2rem;
         }
         @include desktop {
-        font-family: 'Avenir Bold';
-        font-size: 3.75rem;
-        line-height: 4.25rem;      
-        padding-left: 5rem;
+            @include hero-heading-td;        
+            padding-left: 5rem;
         }   
     } 
 }
@@ -295,7 +252,6 @@ body {
             @include desktop {
                 width: calc(100% / 3 - 2rem); 
             }
-            
             &__photo {
                 padding: 0 16px 16px 16px;
                 width: 100%; 
@@ -350,59 +306,9 @@ body {
 }
 
 @include tablet {
-    .main__footer {
-        &__social {
-            display: flex;
-            justify-content: space-around;
-            padding-left: 20px;
-            &__icons {
-                gap: 25px;
-                margin: 0 40px;
-            }
-        
-            &__logo--right-angle {
-                margin-left: 185px;
-            }
-        }
-        &__container {
-            display: flex;
-            margin: 0 auto;
-            gap: 55px;
-        }
-        &__logo {
-            display: none;
-        }
-        &__copyright {
-            padding: 16px;
-        }
-    }
+    @include footer-tablet;
 }
+
 @include desktop {
-    .main__footer {
-        padding: 0 130px;
-        &__social {
-            display: flex;
-            justify-content: space-around;
-            padding-left: 20px;
-            &__icons {
-                gap: 25px;
-                margin-left: 72px;
-            }
-        
-            &__logo--right-angle {
-                margin-left: 444px;
-            }
-        }
-        &__container {
-            display: flex;
-            margin-left: 20px;
-            gap: 88px;
-        }
-        &__logo {
-            display: none;
-        }
-        &__copyright {
-            padding: 16px;
-        }
-    }
+    @include footer-desktop;
 }

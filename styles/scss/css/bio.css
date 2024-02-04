@@ -73,12 +73,6 @@ h3 {
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
-@media (min-width: 768px) and (max-width: 1279px) {
-  h3 {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-  }
-}
 
 ul li {
   font-family: "Avenir Regular", sans-serif;
@@ -192,7 +186,7 @@ body {
 .hero__heading {
   text-align: left;
   color: #FFFFFF;
-  padding-left: 16px;
+  padding-left: 1rem;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .hero__heading {
@@ -487,6 +481,7 @@ body {
     margin: 0 40px;
   }
   .main__footer__social__logo--right-angle {
+    display: flex;
     margin-left: 185px;
   }
   .main__footer__container {
@@ -515,6 +510,7 @@ body {
     margin-left: 72px;
   }
   .main__footer__social__logo--right-angle {
+    display: flex;
     margin-left: 444px;
   }
   .main__footer__container {

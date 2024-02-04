@@ -29,23 +29,150 @@ $breakpoint-desktop: 1279px;
     @content;
   }
 }
+
 @mixin desktop {
   @media (min-width: $breakpoint-desktop) {
     @content;
   }
 }
 
+@mixin paragraph-fontsize {
+  font-size: $font-size-paragraphtd;
+  line-height: 1.375rem;
+}
+
+@mixin h1-font-size {
+  font-size: $font-size-phtd;
+  line-height: 4.25rem;
+}
+
+@mixin h2-font-size {
+  font-size: $font-size-shtd;
+  line-height: 2.75rem;
+}
+
+@mixin header-tablet {
+  .header { 
+    flex-direction: row;
+    align-items: center;
+    padding-left: 36px;
+    gap: 10px;
+    &__image {
+        margin: 0;
+    } 
+    &__nav-bar {
+        &__list {
+            gap: 10px;
+            &__item1 {
+                padding: 16px;
+            }
+            &__item2 {
+                padding: 16px;
+            }
+        }
+    }
+  }
+}
+
+@mixin header-desktop {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 5rem;
+    gap: 20px;
+    &__image {
+        margin: 0;
+    } 
+    &__nav-bar {
+        &__list {
+            gap: 20px;
+            &__item1 {
+                padding: 16px;
+            }
+            &__item2 {
+                padding: 16px;
+            }
+        }
+    }
+  }
+}
+
+@mixin hero-heading-td {
+  font-family: 'Avenir Bold';
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+}
+
+@mixin footer-tablet {
+  .main__footer {
+    &__social {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 20px;
+        &__icons {
+            gap: 25px;
+            margin: 0 40px;
+        }
+    
+        &__logo--right-angle {
+            display: flex;
+            margin-left: 185px;
+        }
+    }
+    &__container {
+        display: flex;
+        margin: 0 auto;
+        gap: 55px;
+    }
+    &__logo {
+        display: none;
+    }
+    &__copyright {
+        padding: 16px;
+    }
+  }
+}
+
+@mixin footer-desktop {
+  .main__footer {
+    padding: 0 130px;
+    &__social {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 20px;
+        &__icons {
+            gap: 25px;
+            margin-left: 72px;
+        }
+    
+        &__logo--right-angle {
+            display: flex;
+            margin-left: 444px;
+        }
+    }
+    &__container {
+        display: flex;
+        margin-left: 20px;
+        gap: 88px;
+    }
+    &__logo {
+        display: none;
+    }
+    &__copyright {
+        padding: 16px;
+    }
+  }
+}
+
 p {
   font-family: $primary-family-font;
-  font-size: 0.813rem;
+  font-size: $font-size-footerm;
   line-height: 1.125rem;
   @include tablet {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+    @include paragraph-fontsize;
   } 
   @include desktop {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+    @include paragraph-fontsize;
   }
 }
 
@@ -54,12 +181,10 @@ h1 {
   font-size: 1.5rem;
   line-height: 2rem;
   @include tablet {
-    font-size: 3.75rem;
-    line-height: 4.25rem;
+    @include h1-font-size;
   }
   @include desktop {
-    font-size: 3.75rem;
-    line-height: 4.25rem;
+    @include h1-font-size;
   }
 }
 
@@ -69,23 +194,17 @@ h2 {
   line-height: 2rem;
   font-weight: 700;
   @include tablet {
-    font-size: 2.25rem;
-    line-height: 2.75rem;
+    @include h2-font-size;
   }
   @include desktop {
-    font-size: 2.25rem;
-    line-height: 2.75rem;
+    @include h2-font-size;
   }
 }
 
 h3 {
   font-family: $secondary-family-font;
-  font-size: 0.875rem;
+  font-size: $font-size-subhm;
   line-height: 1.375rem;
-    @include tablet {
-      font-size: 0.875rem;
-      line-height: 1.375rem;
-    }
 }
 
 ul {
