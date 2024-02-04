@@ -12,34 +12,81 @@ body {
 
 .header {
     background-color: #323232;
+    width: 100%;
     display: flex;
-    align-items: center;
-
+    flex-direction: column;
     &__image {
         display: flex;
+        justify-content: center;
         width: 120px;
         height: 20px;
-        margin-left: 30px;
+        margin: 16px auto;
     }
-    
     &__nav-bar {
-        display: flex;
+        &__list {
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            padding: 0;
+            list-style-type: none;
+            &__item1 {
+                width: 50%;
+                text-align: center;
+                color: #FFFFFF;
+                border-bottom: 5px solid #FAFAFA;
+            }
+            &__item2 {
+                width: 50%;
+                text-align: center;
+                color: #AFAFAF;
+                padding-bottom: 14px;
+            }
+        }
+    }
+}
+
+@include tablet {
+    .header { 
         flex-direction: row;
         align-items: center;
-
-        &__list {
-            list-style-type: none;
-            display: flex;
-            padding-left: 12px;
-            
-            &__item1 {
-                padding-left: 12px;
-                color: #FFFFFF;
+        padding-left: 36px;
+        gap: 10px;
+        &__image {
+            margin: 0;
+        } 
+        &__nav-bar {
+            &__list {
+                gap: 10px;
+                &__item1 {
+                    padding: 16px;
+                }
+                &__item2 {
+                    padding: 16px;
+                }
             }
-
-            &__item2 {
-                padding-left: 12px;
-                color: #AFAFAF;
+        }
+    }
+}
+// Maintaining Desktop @media queries to handle 
+// any eventuality that may arise in the future.
+@include desktop {
+    .header {
+        flex-direction: row;
+        align-items: center;
+        padding-left: 5rem;
+        gap: 20px;
+        &__image {
+            margin: 0;
+        } 
+        &__nav-bar {
+            &__list {
+                gap: 20px;
+                &__item1 {
+                    padding: 16px;
+                }
+                &__item2 {
+                    padding: 16px;
+                }
             }
         }
     }
@@ -50,20 +97,34 @@ body {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 350px;
     display: flex;
     width: 100%;
+    height: 15rem;
     opacity: 50%;
     align-items: center;
-
+        @include tablet {
+            height: 30rem;
+        }
+        @include desktop {
+            height: 35rem;
+        }
      &__heading {
     text-align: left;
     color: #FFFFFF;
     padding-left: 16px;
-    }
-    
-
-    
+        @include tablet {
+        font-family: 'Avenir Bold';
+        font-size: 3.75rem;
+        line-height: 4.25rem;   
+        padding-left: 2rem;
+        }
+        @include desktop {
+        font-family: 'Avenir Bold';
+        font-size: 3.75rem;
+        line-height: 4.25rem;      
+        padding-left: 5rem;
+        }   
+    } 
 }
 
 .info {
@@ -71,86 +132,181 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    
+        @include tablet {
+            width: 90%;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        @include desktop {
+            width: 80%;
+            justify-content: center;
+            margin: 0 auto;
+        }
     &__heading {
         text-align: left;
         padding-left: 16px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
-
-    &__figure {
-        padding: 16px;
-        margin: 0;
+    &__figure {   
+        margin: 1rem;
+        @include tablet {
+            width: 86%;
+            margin: auto;
+        } 
+        @include desktop {
+            width: 79%;
+            margin: auto;
+        }
         &__band-img {
         width: 100%;
+            @include tablet {
+                margin: 0 auto;
+                padding-bottom: 16px;
+            }
+            @include desktop {
+                margin: 0 auto;
+                padding-bottom: 16px;
+            }
         }
-        
         &__captions {
             font-family: 'Avenir Demi';
             font-size: 13px;
             line-height: 18px;
             text-align: left;
-        }
-    }
-
-    &__subheader {
-        text-align: left;
-        margin: 0;
-        padding-left: 16px;
-
-        &__paragraphs {
             display: flex;
-            flex-direction: column;
-            margin: 0;
-            &__1 {
-                padding: 16px;
-            margin: 0;
-            }
-            
-            &__2 {
-                padding: 16px;
-            margin: 0;
-            }
+            padding-bottom: 16px;
                 @include tablet {
+                    font-size: 1.125rem;
+                    line-height: 1.375rem;
+                    margin: 0 66px 0 0;
+                    padding-bottom: 16px;
+                }
+                @include desktop {
+                    font-size: 1.125rem;
+                    line-height: 1.375rem;
+                    padding-bottom: 16px;
                     display: flex;
-                    flex-direction: row;
-                    padding: 16px;
+                    margin: 0;
+                    width: 100%;
+                    justify-content: flex-start;
                 }
         }
     }
 
+    .subheader__container {
+        @include tablet{
+            margin: 0;
+        }
+        &__heading {
+            text-align: left;
+            margin: 0;
+            padding-left: 16px;
+                @include tablet {
+                    margin: 3rem 0 1rem 0;
+                    padding-left: 56px;
+                }
+                @include desktop {
+                    margin: 3rem 0 1rem 0;
+                    padding-left: 118px;
+                }
+        }
+        &__paragraphs {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+                @include tablet {
+                    width: 100%;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    padding-bottom: 2rem;
+                }
+                @include desktop {
+                    width: 100%;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 50px;
+                    padding-bottom: 2rem;
+                }
+            &__1 {
+                padding: 16px;
+                margin: 0;
+                    @include tablet {
+                        padding: 0;
+                        width: 39%;
+                    }
+                    @include desktop {
+                        padding: 0;
+                        width: 37%;
+                    }
+            }
+            &__2 {
+                padding: 16px;
+                margin: 0;
+                    @include tablet {
+                        padding: 0;
+                        width: 39%;
+                    }
+                    @include desktop {
+                        padding: 0;
+                        width: 37%;
+                    }
+            }
+        }
+    }
 }
-    
-    
 
 .gallery {
     background-color: #FAFAFA;
+    @include tablet {
+        padding: 20px;
+    }
+    @include desktop {
+        padding: 0 5rem;
+    }
     &__header {
         text-align: left;
         margin: 0;
         padding: 16px;
+        @include desktop {
+            padding: 16px 0 16px 64px;
+        }
     }
-
-    &__items {
+    &__container {
         display: flex;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
+        @include tablet {
+            flex-wrap: wrap;
+            flex-direction: row;
+        } 
+        @include desktop {
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        &__item {
+            width: 100%;
             @include tablet {
-                flex-wrap: wrap;
-                flex-direction: row;
+                width: calc(100% / 3); 
             }
-        
+            @include desktop {
+                width: calc(100% / 3 - 2rem); 
+            }
+            
             &__photo {
                 padding: 0 16px 16px 16px;
-                width: 100%;
-                    @include tablet {
-                        padding: 36px;
-                    }
-
-                    @include desktop {
-                        padding: 36px;
-                    }
-            }
-    }
+                width: 100%; 
+                margin: 0;
+                @include desktop {
+                    padding: 0 16px 16px 16px;
+                    width: 100%; 
+                }
+            } 
+        }        
+    }        
 }
 
 .main__footer {
@@ -161,4 +317,92 @@ body {
     flex-direction: column;
     align-items: flex-start;
     padding: 16px;
+    &__social {
+        &__icons{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        } 
+    &__logo--right-angle {
+        display: none;
+    }
+    }
+    &__address {
+        display: flex;
+        flex-direction: column;       
+    } 
+    &__contact1 {
+        display: flex;
+        flex-direction: column;
+    }      
+    &__contact2 {
+        display: flex;
+        flex-direction: column;
+    }      
+    &--no-margin {
+            margin: 0;
+        }
+    &__logo {
+        display: flex;
+        padding-top: 36px;
+    }  
+   
+}
+
+@include tablet {
+    .main__footer {
+        &__social {
+            display: flex;
+            justify-content: space-around;
+            padding-left: 20px;
+            &__icons {
+                gap: 25px;
+                margin: 0 40px;
+            }
+        
+            &__logo--right-angle {
+                margin-left: 185px;
+            }
+        }
+        &__container {
+            display: flex;
+            margin: 0 auto;
+            gap: 55px;
+        }
+        &__logo {
+            display: none;
+        }
+        &__copyright {
+            padding: 16px;
+        }
+    }
+}
+@include desktop {
+    .main__footer {
+        padding: 0 130px;
+        &__social {
+            display: flex;
+            justify-content: space-around;
+            padding-left: 20px;
+            &__icons {
+                gap: 25px;
+                margin-left: 72px;
+            }
+        
+            &__logo--right-angle {
+                margin-left: 444px;
+            }
+        }
+        &__container {
+            display: flex;
+            margin-left: 20px;
+            gap: 88px;
+        }
+        &__logo {
+            display: none;
+        }
+        &__copyright {
+            padding: 16px;
+        }
+    }
 }
