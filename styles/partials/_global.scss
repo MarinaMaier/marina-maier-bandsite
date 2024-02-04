@@ -20,7 +20,6 @@ $font-size-paragraphtd: 0.875rem;
 $font-size-footertd: 0.875rem;
 $font-size-lbtd: 0.75rem;
 
-
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1279px;
 
@@ -55,19 +54,19 @@ $breakpoint-desktop: 1279px;
   .header { 
     flex-direction: row;
     align-items: center;
-    padding-left: 36px;
-    gap: 10px;
+    padding-left: 2.25rem;
+    gap: 0.625rem;
     &__image {
         margin: 0;
     } 
     &__nav-bar {
         &__list {
-            gap: 10px;
+            gap:  0.625rem;
             &__item1 {
-                padding: 16px;
+                padding: 1rem;
             }
             &__item2 {
-                padding: 16px;
+                padding: 1rem;
             }
         }
     }
@@ -79,18 +78,18 @@ $breakpoint-desktop: 1279px;
     flex-direction: row;
     align-items: center;
     padding-left: 5rem;
-    gap: 20px;
+    gap: 1.25rem;
     &__image {
         margin: 0;
     } 
     &__nav-bar {
         &__list {
-            gap: 20px;
+            gap: 1.25rem;
             &__item1 {
-                padding: 16px;
+                padding: 1rem;
             }
             &__item2 {
-                padding: 16px;
+                padding: 1rem;
             }
         }
     }
@@ -98,8 +97,8 @@ $breakpoint-desktop: 1279px;
 }
 
 @mixin hero-heading-td {
-  font-family: 'Avenir Bold';
-  font-size: 3.75rem;
+  font-family: $third-family-font;
+  font-size: $font-size-phtd;
   line-height: 4.25rem;
 }
 
@@ -108,58 +107,57 @@ $breakpoint-desktop: 1279px;
     &__social {
         display: flex;
         justify-content: space-around;
-        padding-left: 20px;
+        padding-left: 1.25rem;
         &__icons {
-            gap: 25px;
-            margin: 0 40px;
+            gap: 1.563rem;
+            margin: 0 2.5rem;
         }
     
         &__logo--right-angle {
             display: flex;
-            margin-left: 185px;
+            margin-left: 11.563rem;
         }
     }
     &__container {
         display: flex;
         margin: 0 auto;
-        gap: 55px;
+        gap: 3.438rem;
     }
     &__logo {
         display: none;
     }
     &__copyright {
-        padding: 16px;
+        padding: 1rem;
     }
   }
 }
 
 @mixin footer-desktop {
   .main__footer {
-    padding: 0 130px;
+    padding: 0 8.125rem;
     &__social {
         display: flex;
         justify-content: space-around;
-        padding-left: 20px;
+        padding-left: 1.25rem;
         &__icons {
-            gap: 25px;
-            margin-left: 72px;
+            gap: 1.563rem;
+            margin-left: 4.5rem;
         }
-    
         &__logo--right-angle {
             display: flex;
-            margin-left: 444px;
+            margin-left: 27.75rem;
         }
     }
     &__container {
         display: flex;
-        margin-left: 20px;
-        gap: 88px;
+        margin-left: 1.25rem;
+        gap: 5.5rem;
     }
     &__logo {
         display: none;
     }
     &__copyright {
-        padding: 16px;
+        padding: 1rem;
     }
   }
 }
@@ -178,7 +176,7 @@ p {
 
 h1 {
   font-family: $secondary-family-font;
-  font-size: 1.5rem;
+  font-size: $font-size-phm;
   line-height: 2rem;
   @include tablet {
     @include h1-font-size;
@@ -190,9 +188,8 @@ h1 {
 
 h2 {
   font-family: $secondary-family-font;
-  font-size: 1.5rem;
+  font-size: $font-size-shm;
   line-height: 2rem;
-  font-weight: 700;
   @include tablet {
     @include h2-font-size;
   }
@@ -210,8 +207,21 @@ h3 {
 ul {
   li {
     font-family: $primary-family-font;
-    font-size: 0.813rem;
+    font-size: $font-size-paragraphm;
     line-height: 1.125rem;
   }
 }
 
+.info__figure__captions {
+  font-family: $secondary-family-font;
+  font-size: $font-size-paragraphm;
+  line-height: 1.125rem;
+  @include tablet {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+  @include desktop {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+}

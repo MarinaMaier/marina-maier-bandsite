@@ -11,7 +11,7 @@ body {
 }
 
 .header {
-    background-color: #323232;
+    background-color: $primary-color-black;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@ body {
         justify-content: center;
         width: 120px;
         height: 20px;
-        margin: 16px auto;
+        margin: 1rem auto;
     }
     &__nav-bar {
         &__list {
@@ -29,17 +29,17 @@ body {
             margin: 0 auto;
             padding: 0;
             list-style-type: none;
-            &__item1 {
+            &__item {
                 width: 50%;
                 text-align: center;
-                color: #FFFFFF;
-                border-bottom: 5px solid #FAFAFA;
+                color: $primary-text-color-white;
+                border-bottom: 5px solid $alternative-background-color;
             }
             &__item2 {
                 width: 50%;
                 text-align: center;
-                color: #AFAFAF;
-                padding-bottom: 14px;
+                color: $secondary-color-silver;
+                padding-bottom: 0.875rem;
             }
         }
     }
@@ -71,7 +71,7 @@ body {
         }
      &__heading {
     text-align: left;
-    color: #FFFFFF;
+    color: $primary-text-color-white;
     padding-left: 1rem;
         @include tablet {
             @include hero-heading-td;  
@@ -101,7 +101,7 @@ body {
         }
     &__heading {
         text-align: left;
-        padding-left: 16px;
+        padding-left: 1rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
     }
@@ -119,30 +119,23 @@ body {
         width: 100%;
             @include tablet {
                 margin: 0 auto;
-                padding-bottom: 16px;
+                padding-bottom: 1rem;
             }
             @include desktop {
                 margin: 0 auto;
-                padding-bottom: 16px;
+                padding-bottom: 1rem;
             }
         }
         &__captions {
-            font-family: 'Avenir Demi';
-            font-size: 13px;
-            line-height: 18px;
             text-align: left;
             display: flex;
-            padding-bottom: 16px;
+            padding-bottom: 1rem;
                 @include tablet {
-                    font-size: 1.125rem;
-                    line-height: 1.375rem;
                     margin: 0 66px 0 0;
-                    padding-bottom: 16px;
+                    padding-bottom: 1rem;
                 }
                 @include desktop {
-                    font-size: 1.125rem;
-                    line-height: 1.375rem;
-                    padding-bottom: 16px;
+                    padding-bottom: 1rem;
                     display: flex;
                     margin: 0;
                     width: 100%;
@@ -158,14 +151,14 @@ body {
         &__heading {
             text-align: left;
             margin: 0;
-            padding-left: 16px;
+            padding-left: 1rem;
                 @include tablet {
                     margin: 3rem 0 1rem 0;
-                    padding-left: 56px;
+                    padding-left: 3.5rem;
                 }
                 @include desktop {
                     margin: 3rem 0 1rem 0;
-                    padding-left: 118px;
+                    padding-left: 7.375rem;
                 }
         }
         &__paragraphs {
@@ -184,11 +177,11 @@ body {
                     flex-direction: row;
                     align-items: center;
                     justify-content: center;
-                    gap: 50px;
+                    gap: 3.125rem;
                     padding-bottom: 2rem;
                 }
             &__1 {
-                padding: 16px;
+                padding: 1rem;
                 margin: 0;
                     @include tablet {
                         padding: 0;
@@ -200,7 +193,7 @@ body {
                     }
             }
             &__2 {
-                padding: 16px;
+                padding: 1rem;
                 margin: 0;
                     @include tablet {
                         padding: 0;
@@ -216,9 +209,9 @@ body {
 }
 
 .gallery {
-    background-color: #FAFAFA;
+    background-color: $alternative-background-color;
     @include tablet {
-        padding: 20px;
+        padding: 1.25rem;
     }
     @include desktop {
         padding: 0 5rem;
@@ -226,9 +219,9 @@ body {
     &__header {
         text-align: left;
         margin: 0;
-        padding: 16px;
+        padding: 1rem;
         @include desktop {
-            padding: 16px 0 16px 64px;
+            padding: 1rem 0 1rem 4rem;
         }
     }
     &__container {
@@ -253,11 +246,11 @@ body {
                 width: calc(100% / 3 - 2rem); 
             }
             &__photo {
-                padding: 0 16px 16px 16px;
+                padding: 0 1rem 1rem 1rem;
                 width: 100%; 
                 margin: 0;
                 @include desktop {
-                    padding: 0 16px 16px 16px;
+                    padding: 0 1rem 1rem 1rem;
                     width: 100%; 
                 }
             } 
@@ -266,13 +259,13 @@ body {
 }
 
 .main__footer {
-    background-color: #323232;
-    color: #FFFFFF;
+    background-color: $primary-color-black;
+    color: $primary-text-color-white;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 16px;
+    padding: 1rem;
     &__social {
         &__icons{
             display: flex;
@@ -300,9 +293,8 @@ body {
         }
     &__logo {
         display: flex;
-        padding-top: 36px;
+        padding-top: 2.25rem;
     }  
-   
 }
 
 @include tablet {

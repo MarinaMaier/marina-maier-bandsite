@@ -53,7 +53,6 @@ h2 {
   font-family: "Avenir Demi", sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 700;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   h2 {
@@ -80,6 +79,24 @@ ul li {
   line-height: 1.125rem;
 }
 
+.info__figure__captions {
+  font-family: "Avenir Demi", sans-serif;
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .info__figure__captions {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+}
+@media (min-width: 1279px) {
+  .info__figure__captions {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+}
+
 *, *::before,
 *::after {
   box-sizing: border-box;
@@ -100,7 +117,7 @@ body {
   justify-content: center;
   width: 120px;
   height: 20px;
-  margin: 16px auto;
+  margin: 1rem auto;
 }
 .header__nav-bar__list {
   display: flex;
@@ -109,7 +126,7 @@ body {
   padding: 0;
   list-style-type: none;
 }
-.header__nav-bar__list__item1 {
+.header__nav-bar__list__item {
   width: 50%;
   text-align: center;
   color: #FFFFFF;
@@ -119,27 +136,27 @@ body {
   width: 50%;
   text-align: center;
   color: #AFAFAF;
-  padding-bottom: 14px;
+  padding-bottom: 0.875rem;
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
   .header {
     flex-direction: row;
     align-items: center;
-    padding-left: 36px;
-    gap: 10px;
+    padding-left: 2.25rem;
+    gap: 0.625rem;
   }
   .header__image {
     margin: 0;
   }
   .header__nav-bar__list {
-    gap: 10px;
+    gap: 0.625rem;
   }
   .header__nav-bar__list__item1 {
-    padding: 16px;
+    padding: 1rem;
   }
   .header__nav-bar__list__item2 {
-    padding: 16px;
+    padding: 1rem;
   }
 }
 @media (min-width: 1279px) {
@@ -147,19 +164,19 @@ body {
     flex-direction: row;
     align-items: center;
     padding-left: 5rem;
-    gap: 20px;
+    gap: 1.25rem;
   }
   .header__image {
     margin: 0;
   }
   .header__nav-bar__list {
-    gap: 20px;
+    gap: 1.25rem;
   }
   .header__nav-bar__list__item1 {
-    padding: 16px;
+    padding: 1rem;
   }
   .header__nav-bar__list__item2 {
-    padding: 16px;
+    padding: 1rem;
   }
 }
 .hero {
@@ -190,7 +207,7 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .hero__heading {
-    font-family: "Avenir Bold";
+    font-family: "Avenir Bold", sans-serif;
     font-size: 3.75rem;
     line-height: 4.25rem;
     padding-left: 2rem;
@@ -198,7 +215,7 @@ body {
 }
 @media (min-width: 1279px) {
   .hero__heading {
-    font-family: "Avenir Bold";
+    font-family: "Avenir Bold", sans-serif;
     font-size: 3.75rem;
     line-height: 4.25rem;
     padding-left: 5rem;
@@ -227,7 +244,7 @@ body {
 }
 .info__heading {
   text-align: left;
-  padding-left: 16px;
+  padding-left: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -252,36 +269,29 @@ body {
 @media (min-width: 768px) and (max-width: 1279px) {
   .info__figure__band-img {
     margin: 0 auto;
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
   }
 }
 @media (min-width: 1279px) {
   .info__figure__band-img {
     margin: 0 auto;
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
   }
 }
 .info__figure__captions {
-  font-family: "Avenir Demi";
-  font-size: 13px;
-  line-height: 18px;
   text-align: left;
   display: flex;
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .info__figure__captions {
-    font-size: 1.125rem;
-    line-height: 1.375rem;
     margin: 0 66px 0 0;
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
   }
 }
 @media (min-width: 1279px) {
   .info__figure__captions {
-    font-size: 1.125rem;
-    line-height: 1.375rem;
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
     display: flex;
     margin: 0;
     width: 100%;
@@ -296,18 +306,18 @@ body {
 .info .subheader__container__heading {
   text-align: left;
   margin: 0;
-  padding-left: 16px;
+  padding-left: 1rem;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .info .subheader__container__heading {
     margin: 3rem 0 1rem 0;
-    padding-left: 56px;
+    padding-left: 3.5rem;
   }
 }
 @media (min-width: 1279px) {
   .info .subheader__container__heading {
     margin: 3rem 0 1rem 0;
-    padding-left: 118px;
+    padding-left: 7.375rem;
   }
 }
 .info .subheader__container__paragraphs {
@@ -330,12 +340,12 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 3.125rem;
     padding-bottom: 2rem;
   }
 }
 .info .subheader__container__paragraphs__1 {
-  padding: 16px;
+  padding: 1rem;
   margin: 0;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
@@ -351,7 +361,7 @@ body {
   }
 }
 .info .subheader__container__paragraphs__2 {
-  padding: 16px;
+  padding: 1rem;
   margin: 0;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
@@ -372,7 +382,7 @@ body {
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .gallery {
-    padding: 20px;
+    padding: 1.25rem;
   }
 }
 @media (min-width: 1279px) {
@@ -383,11 +393,11 @@ body {
 .gallery__header {
   text-align: left;
   margin: 0;
-  padding: 16px;
+  padding: 1rem;
 }
 @media (min-width: 1279px) {
   .gallery__header {
-    padding: 16px 0 16px 64px;
+    padding: 1rem 0 1rem 4rem;
   }
 }
 .gallery__container {
@@ -422,13 +432,13 @@ body {
   }
 }
 .gallery__container__item__photo {
-  padding: 0 16px 16px 16px;
+  padding: 0 1rem 1rem 1rem;
   width: 100%;
   margin: 0;
 }
 @media (min-width: 1279px) {
   .gallery__container__item__photo {
-    padding: 0 16px 16px 16px;
+    padding: 0 1rem 1rem 1rem;
     width: 100%;
   }
 }
@@ -440,7 +450,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 16px;
+  padding: 1rem;
 }
 .main__footer__social__icons {
   display: flex;
@@ -467,61 +477,61 @@ body {
 }
 .main__footer__logo {
   display: flex;
-  padding-top: 36px;
+  padding-top: 2.25rem;
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
   .main__footer__social {
     display: flex;
     justify-content: space-around;
-    padding-left: 20px;
+    padding-left: 1.25rem;
   }
   .main__footer__social__icons {
-    gap: 25px;
-    margin: 0 40px;
+    gap: 1.563rem;
+    margin: 0 2.5rem;
   }
   .main__footer__social__logo--right-angle {
     display: flex;
-    margin-left: 185px;
+    margin-left: 11.563rem;
   }
   .main__footer__container {
     display: flex;
     margin: 0 auto;
-    gap: 55px;
+    gap: 3.438rem;
   }
   .main__footer__logo {
     display: none;
   }
   .main__footer__copyright {
-    padding: 16px;
+    padding: 1rem;
   }
 }
 @media (min-width: 1279px) {
   .main__footer {
-    padding: 0 130px;
+    padding: 0 8.125rem;
   }
   .main__footer__social {
     display: flex;
     justify-content: space-around;
-    padding-left: 20px;
+    padding-left: 1.25rem;
   }
   .main__footer__social__icons {
-    gap: 25px;
-    margin-left: 72px;
+    gap: 1.563rem;
+    margin-left: 4.5rem;
   }
   .main__footer__social__logo--right-angle {
     display: flex;
-    margin-left: 444px;
+    margin-left: 27.75rem;
   }
   .main__footer__container {
     display: flex;
-    margin-left: 20px;
-    gap: 88px;
+    margin-left: 1.25rem;
+    gap: 5.5rem;
   }
   .main__footer__logo {
     display: none;
   }
   .main__footer__copyright {
-    padding: 16px;
+    padding: 1rem;
   }
 }/*# sourceMappingURL=bio.css.map */
