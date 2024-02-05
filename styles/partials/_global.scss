@@ -1,0 +1,227 @@
+$primary-color-black: #323232;
+$secondary-color-silver: #AFAFAF;
+$primary-text-color-white: #FFFFFF;
+$hover-state-color: #000000;
+$divider-line: #E1E1E1;
+$alternative-background-color: #FAFAFA;
+$primary-family-font: 'Avenir Regular', sans-serif;
+$secondary-family-font: 'Avenir Demi', sans-serif;
+$third-family-font: 'Avenir Bold', sans-serif;
+$font-size-phm: 1.5rem;
+$font-size-shm: 1.5rem;
+$font-size-subhm: 0.875rem;
+$font-size-paragraphm: 0.813rem;
+$font-size-footerm: 0.813rem;
+$font-size-lbm: 0.625;
+$font-size-phtd: 3.75rem;
+$font-size-shtd: 2.25rem;
+$font-size-subhtd: 1.5rem;
+$font-size-paragraphtd: 0.875rem;
+$font-size-footertd: 0.875rem;
+$font-size-lbtd: 0.75rem;
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1279px;
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet){
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin paragraph-fontsize {
+  font-size: $font-size-paragraphtd;
+  line-height: 1.375rem;
+}
+
+@mixin h1-font-size {
+  font-size: $font-size-phtd;
+  line-height: 4.25rem;
+}
+
+@mixin h2-font-size {
+  font-size: $font-size-shtd;
+  line-height: 2.75rem;
+}
+
+@mixin header-tablet {
+  .header { 
+    flex-direction: row;
+    align-items: center;
+    padding-left: 2.25rem;
+    gap: 0.625rem;
+    &__image {
+        margin: 0;
+    } 
+    &__nav-bar {
+        &__list {
+            gap:  0.625rem;
+            &__item1 {
+                padding: 1rem;
+            }
+            &__item2 {
+                padding: 1rem;
+            }
+        }
+    }
+  }
+}
+
+@mixin header-desktop {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 5rem;
+    gap: 1.25rem;
+    &__image {
+        margin: 0;
+    } 
+    &__nav-bar {
+        &__list {
+            gap: 1.25rem;
+            &__item1 {
+                padding: 1rem;
+            }
+            &__item2 {
+                padding: 1rem;
+            }
+        }
+    }
+  }
+}
+
+@mixin hero-heading-td {
+  font-family: $third-family-font;
+  font-size: $font-size-phtd;
+  line-height: 4.25rem;
+}
+
+@mixin footer-tablet {
+  .main__footer {
+    &__social {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 1.25rem;
+        &__icons {
+            gap: 1.563rem;
+            margin: 0 2.5rem;
+        }
+    
+        &__logo--right-angle {
+            display: flex;
+            margin-left: 11.563rem;
+        }
+    }
+    &__container {
+        display: flex;
+        margin: 0 auto;
+        gap: 3.438rem;
+    }
+    &__logo {
+        display: none;
+    }
+    &__copyright {
+        padding: 1rem;
+    }
+  }
+}
+
+@mixin footer-desktop {
+  .main__footer {
+    padding: 0 8.125rem;
+    &__social {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 1.25rem;
+        &__icons {
+            gap: 1.563rem;
+            margin-left: 4.5rem;
+        }
+        &__logo--right-angle {
+            display: flex;
+            margin-left: 27.75rem;
+        }
+    }
+    &__container {
+        display: flex;
+        margin-left: 1.25rem;
+        gap: 5.5rem;
+    }
+    &__logo {
+        display: none;
+    }
+    &__copyright {
+        padding: 1rem;
+    }
+  }
+}
+
+p {
+  font-family: $primary-family-font;
+  font-size: $font-size-footerm;
+  line-height: 1.125rem;
+  @include tablet {
+    @include paragraph-fontsize;
+  } 
+  @include desktop {
+    @include paragraph-fontsize;
+  }
+}
+
+h1 {
+  font-family: $secondary-family-font;
+  font-size: $font-size-phm;
+  line-height: 2rem;
+  @include tablet {
+    @include h1-font-size;
+  }
+  @include desktop {
+    @include h1-font-size;
+  }
+}
+
+h2 {
+  font-family: $secondary-family-font;
+  font-size: $font-size-shm;
+  line-height: 2rem;
+  @include tablet {
+    @include h2-font-size;
+  }
+  @include desktop {
+    @include h2-font-size;
+  }
+}
+
+h3 {
+  font-family: $secondary-family-font;
+  font-size: $font-size-subhm;
+  line-height: 1.375rem;
+}
+
+ul {
+  li {
+    font-family: $primary-family-font;
+    font-size: $font-size-paragraphm;
+    line-height: 1.125rem;
+  }
+}
+
+.info__figure__captions {
+  font-family: $secondary-family-font;
+  font-size: $font-size-paragraphm;
+  line-height: 1.125rem;
+  @include tablet {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+  @include desktop {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+}
