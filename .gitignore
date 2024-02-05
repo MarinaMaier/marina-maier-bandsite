@@ -1,2 +1,3 @@
+*.css.map
+/README.md/
 .DS_Store
-.css.map
