@@ -1,2 +1,172 @@
 @use "./partials/typography" as *;
 @use "./partials/global" as *;
+
+*, *::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.header {
+    background-color: $primary-color-black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &__image {
+        display: flex;
+        justify-content: center;
+        width: 120px;
+        height: 20px;
+        margin: 1rem auto;
+    }
+    &__nav-bar {
+        &__list {
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            padding: 0;
+            list-style-type: none;
+            &__item1 {
+                width: 50%;
+                text-align: center;
+                color: $secondary-color-silver;
+                padding-bottom: 0.875rem;
+            }
+            &__item2 {
+                width: 50%;
+                text-align: center;
+                color: $primary-text-color-white;
+                border-bottom: 5px solid $alternative-background-color;
+            }
+        }
+    }
+}
+
+@include tablet {
+    @include header-tablet;
+}
+
+@include desktop {
+    @include header-desktop;
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 1rem;
+    width: 100%;
+    height: 20rem;
+    &::before {
+        content: "";
+        background-image: url(/assets/images/hero-shows.jpg);
+        background-size: cover;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        filter: brightness(50%);
+            @include tablet {
+                @include hero-section-tb;
+            }
+            @include desktop {
+                @include hero-section-dt;
+            }
+        }
+        @include tablet {
+            @include hero-section-tb;
+        }
+        @include desktop {
+            flex-direction: row;
+            align-items: center;
+            @include hero-section-dt;
+        }
+    &__item1 {
+        position: relative;
+        color: $primary-text-color-white;
+        @include tablet {
+            @include hero-item1;  
+            padding-left: 2rem;
+        }
+        @include desktop {
+            @include hero-item1;        
+            padding-left: 5rem;
+        }
+    }
+    &__item2 {
+        position: relative;
+        color: $primary-text-color-white;
+        width: 205px;
+        @include tablet {
+            @include hero-item2-tb;
+        }
+        @include desktop {
+            @include hero-item2-dt;        
+        }
+    }
+    &__item3 {
+        position: relative;
+            @include tablet {
+                @include hero-heading-td;  
+                padding-left: 2rem;
+            }
+            @include desktop {
+                @include hero-heading-td;        
+                padding-left: 5rem;
+            }                            
+    } 
+}
+
+
+.main__footer {
+    background-color: $primary-color-black;
+    color: $primary-text-color-white;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    &__social {
+        &__icons{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        } 
+    &__logo--right-angle {
+        display: none;
+    }
+    }
+    &__address {
+        display: flex;
+        flex-direction: column;       
+    } 
+    &__contact1 {
+        display: flex;
+        flex-direction: column;
+    }      
+    &__contact2 {
+        display: flex;
+        flex-direction: column;
+    }      
+    &--no-margin {
+            margin: 0;
+        }
+    &__logo {
+        display: flex;
+        padding-top: 2.25rem;
+    }  
+}
+
+@include tablet {
+    @include footer-tablet;
+}
+
+@include desktop {
+    @include footer-desktop;
+}
