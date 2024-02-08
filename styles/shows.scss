@@ -79,65 +79,112 @@
 }
 
 .shows {
+    padding: 1rem;
     &__heading {
         font-family: $secondary-family-font;
         font-size: $font-size-shm;
         line-height: 2rem;
     }
-    &__container {
-        &__date {
-            &__lable {
-                font-family: $primary-family-font;
-                font-size: $font-size-footerm;
-                line-height: 1.125rem;
+    &__wrapper {
+        &__container {
+            &__date {
+                &__label {
+                    font-family: $secondary-family-font;
+                    font-size: $font-size-paragraphm;
+                    line-height: 1.25rem;
+                    color: $secondary-color-silver;
+                }
+                &__text {
+                    font-family: $secondary-family-font;
+                    font-size: $font-size-paragraphm;
+                    font-weight: 600;
+                    line-height: 1.5rem;
+                }
+            } 
+            &__venue {
+                &__label {
+                    font-family: $secondary-family-font;
+                    font-size: $font-size-paragraphm;
+                    line-height: 1.25rem;
+                    color: $secondary-color-silver;
+                }
+                &__text { 
+                    font-family: $primary-family-font;
+                    font-size: $font-size-paragraphm;
+                    line-height: 1.125rem;
+                }
             }
-            &__lable--td {
-                font-family: $primary-family-font;
-                font-size: $font-size-footerm;
-                line-height: 1.125rem;
+            &__location {
+                &__label { 
+                    font-family: $secondary-family-font;
+                    font-size: $font-size-paragraphm;                            line-height: 1.25rem;
+                    color: $secondary-color-silver;
+                }
+                &__text {
+                    font-family: $primary-family-font;                                font-size: $font-size-paragraphm;
+                    line-height: 1.125rem;
+                }
             }
-            &__text {
-                font-family: $primary-family-font;
-                font-size: $font-size-footerm;
-                line-height: 1.125rem;
-            }
-        }    
-        &__venue {
-            &__lable {
-                font-family: $primary-family-font;
-                font-size: $font-size-footerm;
-                line-height: 1.125rem;
-            }
-            &__lable--td {
-                font-family: $primary-family-font;
-                font-size: $font-size-footerm;
-                line-height: 1.125rem;
-            }
-            &__text { font-family: $primary-family-font;
-                font-size: $font-size-footerm;
-                line-height: 1.125rem;
+            &__btn {
+                font-family: $secondary-family-font;
+                font-size: $font-size-subhm;
+                line-height: 1.25rem;
+                font-weight: 700;
+                color: $primary-text-color-white;
+                background-color: $primary-color-black;
+                border: none;
+                border-radius: 5px;
+                width: 100%;
+                height: 3rem;
+                text-align: center;
+            } 
+            &__divider2 {
+                display: none;
             }
         }
-        &__location {
-            &__lable { font-family: $primary-family-font;
-                font-size: $font-size-footerm;
-                line-height: 1.125rem;
-            }
-            &__lable--td {
-                font-family: $primary-family-font;
-                font-size: $font-size-footerm;
-                line-height: 1.125rem;
-            }
-            &__text {
-                font-family: $primary-family-font;
-                font-size: $font-size-footerm;
-                line-height: 1.125rem;
-            }
+    }
+    &__divider1 {
+        color: $secondary-color-silver;
+    }
+} 
+
+@include tablet {
+    .shows {
+        &__wrapper {
+            display: flex;
+            flex-direction: row;
+            width: 480px;
+            justify-content: space-between;
+            &__container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                &__btn {
+                    font-weight: 600;
+                    width: 160px;
+                }
+            }    
         }
-        &__btn {
-            font-family: $primary-family-font;
-            font-size: $font-size-subhm;
-            line-height: 1.375rem;
-        } 
+    }
+}
+
+@include desktop {
+    .shows {
+        display: flex;
+        flex-direction: row;
+        &__heading {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            text-align: center;
+        }
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        &__divider1 {
+           color: $secondary-color-silver;
+           
+        }
     }
 }

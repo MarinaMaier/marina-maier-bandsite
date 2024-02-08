@@ -69,6 +69,19 @@ $breakpoint-desktop: 1279px;
   padding-bottom: 0.875rem;
   text-decoration: none;
 }
+
+@mixin shows-heading {
+  font-family: $secondary-family-font;
+  font-size: $font-size-shm;
+  line-height: 2rem;
+}
+
+
+
+
+
+
+
 body {
   margin: 0;
 }

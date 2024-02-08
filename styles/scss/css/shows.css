@@ -343,58 +343,101 @@ ul li {
     margin: 0 auto;
   }
 }
+.shows {
+  padding: 1rem;
+}
 .shows__heading {
   font-family: "Avenir Demi", sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
 }
-.shows__container__date__lable {
+.shows__wrapper__container__date__label {
+  font-family: "Avenir Demi", sans-serif;
+  font-size: 0.813rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
+}
+.shows__wrapper__container__date__text {
+  font-family: "Avenir Demi", sans-serif;
+  font-size: 0.813rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+.shows__wrapper__container__venue__label {
+  font-family: "Avenir Demi", sans-serif;
+  font-size: 0.813rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
+}
+.shows__wrapper__container__venue__text {
   font-family: "Avenir Regular", sans-serif;
   font-size: 0.813rem;
   line-height: 1.125rem;
 }
-.shows__container__date__lable--td {
+.shows__wrapper__container__location__label {
+  font-family: "Avenir Demi", sans-serif;
+  font-size: 0.813rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
+}
+.shows__wrapper__container__location__text {
   font-family: "Avenir Regular", sans-serif;
   font-size: 0.813rem;
   line-height: 1.125rem;
 }
-.shows__container__date__text {
-  font-family: "Avenir Regular", sans-serif;
-  font-size: 0.813rem;
-  line-height: 1.125rem;
-}
-.shows__container__venue__lable {
-  font-family: "Avenir Regular", sans-serif;
-  font-size: 0.813rem;
-  line-height: 1.125rem;
-}
-.shows__container__venue__lable--td {
-  font-family: "Avenir Regular", sans-serif;
-  font-size: 0.813rem;
-  line-height: 1.125rem;
-}
-.shows__container__venue__text {
-  font-family: "Avenir Regular", sans-serif;
-  font-size: 0.813rem;
-  line-height: 1.125rem;
-}
-.shows__container__location__lable {
-  font-family: "Avenir Regular", sans-serif;
-  font-size: 0.813rem;
-  line-height: 1.125rem;
-}
-.shows__container__location__lable--td {
-  font-family: "Avenir Regular", sans-serif;
-  font-size: 0.813rem;
-  line-height: 1.125rem;
-}
-.shows__container__location__text {
-  font-family: "Avenir Regular", sans-serif;
-  font-size: 0.813rem;
-  line-height: 1.125rem;
-}
-.shows__container__btn {
-  font-family: "Avenir Regular", sans-serif;
+.shows__wrapper__container__btn {
+  font-family: "Avenir Demi", sans-serif;
   font-size: 0.875rem;
-  line-height: 1.375rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background-color: #323232;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 3rem;
+  text-align: center;
+}
+.shows__wrapper__container__divider2 {
+  display: none;
+}
+.shows__divider1 {
+  color: #AFAFAF;
+}
+
+@media (min-width: 768px) {
+  .shows__wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 480px;
+    justify-content: space-between;
+  }
+  .shows__wrapper__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .shows__wrapper__container__btn {
+    font-weight: 600;
+    width: 160px;
+  }
+}
+@media (min-width: 1279px) {
+  .shows {
+    display: flex;
+    flex-direction: row;
+  }
+  .shows__heading {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    text-align: center;
+  }
+  .shows__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .shows__divider1 {
+    color: #AFAFAF;
+  }
 }/*# sourceMappingURL=shows.css.map */
