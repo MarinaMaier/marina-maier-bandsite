@@ -108,7 +108,7 @@ h2 {
     @include h2-font-size;
   }
   @include desktop {
-    @include h2-font-size;
+    @include h1-font-size;
   }
 }
 

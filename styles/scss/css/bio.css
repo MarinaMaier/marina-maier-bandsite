@@ -72,8 +72,9 @@ h2 {
 }
 @media (min-width: 1279px) {
   h2 {
-    font-size: 2.25rem;
-    line-height: 2.75rem;
+    font-family: "Avenir Demi", sans-serif;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
   }
 }
 
