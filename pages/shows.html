@@ -8,11 +8,11 @@
 </head>
 <body>
     <header class="header">
-        <img src="/assets/logos/Logo-bandsite.svg" alt="logo" class="header__image">
+        <a href="/index.html"><img src="/assets/logos/Logo-bandsite.svg" alt="logo" class="header__image"></a>
         <nav classs="header__nav-bar">
             <ul class="header__nav-bar__list">
-                <li class="header__nav-bar__list__item1">Biography</li>
-                <li class="header__nav-bar__list__item2">Shows</li>
+                <li class="header__nav-bar__list__item1 header__nav-bar__list--inactive"><a style="color:#AFAFAF" href="/index.html">Biography</a></li>
+                <li class="header__nav-bar__list__item2 header__nav-bar__list--active"><a style="color:#FFFFFF" href="/pages/shows.html">Shows</a></li>
             </ul>
         </nav>
     </header>
@@ -26,24 +26,26 @@
     </section>
     <main class="shows">
         <h2 class="shows__heading">Shows</h2>
-        <div class="container">
-            <div class="container">
-                <div class="container__date">
-                    <p class="">Date</p>
-                    <p class="">Text</p>
-                </div>
-                <div class="container__venue">
-                    <p class="">Venue</p>
-                    <p class="">Text</p>
-                </div>
-                <div class="container__location">
-                    <p class="">Location</p>
-                    <p class="">Text</p>
-                </div>
-                <div class="container__btn">
-                    <button>Buy Tickets</button>
-                </div>
+        <div class="shows__container">
+            <div class="shows__container__date">
+                <p class="shows__container__date__label">Date</p>
+                <p class="shows__container__date__label--td">Date</p>
+                <p class="shows__container__date__text">Text</p>
             </div>
+            <div class="shows__container__venue">
+                <p class="shows__container__venue__label">Venue</p>
+                <p class="shows__container__venue__label--td">Venue</p>
+                <p class="shows__container__venue__text">Text</p>
+            </div>
+            <div class="shows__container__location">
+                <p class="hows__container__location__label">Location</p>
+                <p class="hows__container__location__label--td">Location</p>
+                <p class="hows__container__location__text">Text</p>
+            </div>
+            <div class="shows__container__btn">
+                <button>Buy Tickets</button>
+            </div>
+        </div>
     </main>
     <footer class="main__footer">
         <div class="main__footer__social">
