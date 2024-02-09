@@ -117,11 +117,13 @@
             &__location {
                 &__label { 
                     font-family: $secondary-family-font;
-                    font-size: $font-size-paragraphm;                            line-height: 1.25rem;
+                    font-size: $font-size-paragraphm;
                     color: $secondary-color-silver;
+                    line-height: 1.25rem;
                 }
                 &__text {
-                    font-family: $primary-family-font;                                font-size: $font-size-paragraphm;
+                    font-family: $primary-family-font; 
+                    font-size: $font-size-paragraphm;
                     line-height: 1.125rem;
                 }
             }
