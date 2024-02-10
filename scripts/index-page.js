@@ -1,8 +1,4 @@
-function displayConversation(conv) {
-    const convTitleEl = document.createElement("section");
-    convTitleEl.classList.add("h2");
-    
-}
+const commentsSection = document.querySelector(".comments__section");
 const comments = [
     {
         name: 'Victor Pinto',
@@ -21,25 +17,82 @@ const comments = [
     }
 ];
 
-for (commentIndex in comments) {
-    displayComment(comments[commentIndex]);
+for (const index in comments) {
+    displayComment(comments[index]);
 };
 
 function displayComment(commentObj) {
     const comment = document.createElement('article');
+    comment.classList.add('article__wrapper');
+
+    const commentSecWrep1 = document.createElement('div');
+    commentSecWrep1.classList.add('comments__section__wrapper1');
+
+    const commentImg = document.createElement('div');
+    commentImg.classList.add('comments__avatar');
+
+    const commentSecWrep2 = document.createElement('div');
+    commentSecWrep2.classList.add('comments__section__wrapper2');
+
+    const comentWrapper = document.createElement('div');
+    comentWrapper.classList.add('lable__wrapper');
 
     const comentName = document.createElement('label');
+    comentName.classList.add('label__wrapper__name')
     comentName.innerText = commentObj.name;
 
     const comentTimestamp = document.createElement('label');
+    comentTimestamp.classList.add('label__wrapper__timestamp')
     comentTimestamp.innerText = commentObj.timesheet;
 
     const comentText = document.createElement('p');
+    comentText.classList.add('user__comment')
     comentText.innerText = commentObj.text;
 
-    comment.appendChild(comentName);
-    comment.appendChild(comentTimestamp);
-    comment.appendChild(comentText);
+    const comentDivider = document.createElement('hr');
 
-    document.querySelector(".comments__section").appendChild(comment);
+   
+    comentWrapper.appendChild(comentName);
+    comentWrapper.appendChild(comentTimestamp);
+    commentSecWrep1.appendChild(commentImg);
+    commentSecWrep2.appendChild(comentWrapper);
+    commentSecWrep2.appendChild(comentText);
+    comment.appendChild(commentSecWrep1);
+    comment.appendChild(commentSecWrep2); 
+    comment.appendChild(comentDivider);
+    commentsSection.appendChild(comment);
 }
+
+// Related to form:
+const addUserForm = document.getElementById("add-user-form");
+const formErrors = document.getElementById("add-user-form-errors");
+
+addUserForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const text = event.target.text.value;
+    // Validation: If name is empty, show an error message and end event handler
+    if (name === "") {
+        formErrors.innerText = "Add your name";
+        return;
+    }
+    if (text === "") {
+        formErrors.innerText = "Add your comment"
+        return;
+    }
+    // clear error messages on submit if all's good, then process form
+    formErrors.innerText = "";
+    // before this point, what do we want to validate for our input
+    const newComment = {
+        name: name,
+        text: text,
+        timesheet: new Date().toLocaleDateString('en-GB'),
+    }
+    comments.unshift(newComment)
+    // Clear existing comments view
+    commentsSection.innerHTML = "";
+    // Re render the view
+    for (const index in comments) {
+        displayComment(comments[index]);
+    };
+});

@@ -90,6 +90,12 @@ ul li {
   line-height: 1.125rem;
 }
 
+label {
+  font-family: "Avenir Demi", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
 .header {
   background-color: #323232;
   width: 100%;
@@ -351,6 +357,81 @@ ul li {
   padding: 0 0rem 1rem 0rem;
   width: 100%;
   margin: 0px;
+}
+
+.conv__heading {
+  padding-left: 1rem;
+}
+.conv__wrapper {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+.conv__wrapper__container {
+  display: flex;
+  justify-content: center;
+}
+.conv__wrapper__container__img {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+
+.form {
+  margin: 1rem;
+  width: 80%;
+}
+.form__container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.form__label {
+  color: #AFAFAF;
+}
+.form #user-name {
+  height: 2rem;
+}
+.form #user-comment {
+  height: 5rem;
+}
+.form ::placeholder {
+  color: #323232;
+}
+.form__btn {
+  font-family: "Avenir Demi", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background-color: #323232;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 3rem;
+  text-align: center;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+}
+.comments__avatar {
+  background-color: #AFAFAF;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+.comments__section .lable__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.comments__section .lable__wrapper__name {
+  color: #323232;
 }
 
 @media (min-width: 768px) {

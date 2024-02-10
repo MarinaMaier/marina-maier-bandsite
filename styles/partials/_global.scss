@@ -23,7 +23,9 @@ $font-size-lbtd: 0.75rem;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1279px;
 
-
+// *{
+//   border: 1px red solid;
+// }
 
 
 @mixin tablet {
@@ -76,11 +78,19 @@ $breakpoint-desktop: 1279px;
   line-height: 2rem;
 }
 
-
-
-
-
-
+@mixin button {
+  font-family: $secondary-family-font;
+  font-size: $font-size-subhm;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: $primary-text-color-white;
+  background-color: $primary-color-black;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 3rem;
+  text-align: center;
+}
 
 body {
   margin: 0;
@@ -137,6 +147,12 @@ ul {
     font-size: $font-size-paragraphm;
     line-height: 1.125rem;
   }
+}
+
+label {
+  font-family: $secondary-family-font ;
+  font-size: $font-size-subhm;
+  line-height: 1.375rem;
 }
 // header
 .header {

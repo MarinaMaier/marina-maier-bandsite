@@ -84,6 +84,76 @@
         }
     }
 }
+.conv {
+    &__heading {
+        padding-left: 1rem;
+    }
+    &__wrapper {
+        margin: 1rem;
+        display: flex;
+        flex-direction: row;
+        &__container {
+            display: flex;
+            justify-content: center;
+            &__img {
+            object-fit: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-top: 2rem;
+            }
+        }
+    }      
+} 
+.form {
+    margin: 1rem;
+    width: 80%;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        }
+    &__label {
+        color: $secondary-color-silver;
+    }
+    #user-name {
+        height: 2rem;
+    }
+    #user-comment {
+        height: 5rem;
+    }
+    ::placeholder {
+        color: $primary-color-black;
+    }
+    &__btn {
+        @include button;
+
+    }
+}
+    
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    &__avatar {
+        background-color: $secondary-color-silver;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-top: 2rem;
+    }
+    &__section {
+        .lable__wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            &__name {
+                color: $primary-color-black;
+            }
+        } 
+    }
+}
+
 
 @include tablet {
     .hero {
