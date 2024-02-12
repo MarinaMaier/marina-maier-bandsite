@@ -26,7 +26,9 @@ $breakpoint-desktop: 1279px;
 // *{
 //   border: 1px red solid;
 // }
-
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 @mixin tablet {
   @media (min-width: $breakpoint-tablet){
@@ -92,13 +94,18 @@ $breakpoint-desktop: 1279px;
   text-align: center;
 }
 
+@mixin label {
+  font-family: $secondary-family-font;
+  font-size: $font-size-subhm;
+  line-height: 1.375rem;
+}
+
 body {
   margin: 0;
 }
 a {
   text-decoration: none;
 }
-
 p {
   font-family: $primary-family-font;
   font-size: $font-size-footerm;
@@ -110,7 +117,6 @@ p {
     @include paragraph-fontsize;
   }
 }
-
 h1 {
   font-family: $secondary-family-font;
   font-size: $font-size-phm;
@@ -122,7 +128,6 @@ h1 {
     @include h1-font-size;
   }
 }
-
 h2 {
   font-family: $secondary-family-font;
   font-size: $font-size-shm;
@@ -131,16 +136,14 @@ h2 {
     @include h2-font-size;
   }
   @include desktop {
-    @include h1-font-size;
+    @include h2-font-size;
   }
 }
-
 h3 {
   font-family: $primary-family-font;
   font-size: $font-size-subhm;
   line-height: 1.375rem;
 }
-
 ul {
   li {
     font-family: $primary-family-font;
@@ -148,11 +151,33 @@ ul {
     line-height: 1.125rem;
   }
 }
-
-label {
-  font-family: $secondary-family-font ;
-  font-size: $font-size-subhm;
-  line-height: 1.375rem;
+a {
+  color: $divider-line;
+}
+a.header__nav-bar__list--inactive {
+  color: $divider-line; 
+}
+a:hover {
+  color: $primary-text-color-white;
+  padding-bottom: 26px;
+  border-bottom: 5px solid $alternative-background-color;
+}
+.form__container__input {
+  font-family: $primary-family-font;
+  font-size: $font-size-footerm;
+  line-height: 1.125rem;
+}
+.form__container__label {
+  @include label;
+  color: $divider-line;
+}
+.label__wrapper__name {
+  @include label;
+  color: $primary-color-black;
+}
+.label__wrapper__timestamp {
+  @include label;
+  color: $secondary-color-silver;
 }
 // header
 .header {
@@ -184,18 +209,12 @@ label {
               text-align: center;
           }
           &--active {
-            border-bottom: 5px solid $alternative-background-color;
-          }
-          &--color {
             color: $primary-text-color-white;
-          }
-          &--color {
-            color: $secondary-color-silver;
+            border-bottom: 5px solid $alternative-background-color;
           }
       }
   }
 }
-
 @include tablet {
   .header { 
     flex-direction: row;
@@ -228,8 +247,6 @@ label {
     gap: 4rem;
   }
 }
-
-
 .info__figure__captions {
   font-family: $secondary-family-font;
   font-size: $font-size-paragraphm;
@@ -241,6 +258,39 @@ label {
   @include desktop {
     font-size: 1.125rem;
     line-height: 1.375rem;
+  }
+}
+// Hero section
+.hero {
+  background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    height: 23rem;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 1rem;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 23rem;
+        background-color: $primary-color-black; 
+        opacity: 50%;
+    }
+}
+@include tablet {
+  .hero::before {
+    height: 30rem;
+  }
+}
+@include desktop {
+  .hero::before {
+    height: 35rem;
   }
 }
 // Footer
@@ -282,7 +332,6 @@ label {
         padding-top: 2.25rem;
     }  
 }
-
 @include tablet {
   .main__footer {
     &__social {
@@ -312,7 +361,6 @@ label {
     }
   }
 }
-
 @include desktop {
   .main__footer {
     padding: 0 8.125rem;

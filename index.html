@@ -13,10 +13,8 @@
         <a href="/index.html"><img src="/assets/logos/Logo-bandsite.svg" alt="logo" class="header__image"></a>
         <nav classs="header__nav-bar">
             <ul class="header__nav-bar__list">
-                <li class="header__nav-bar__list__item1 header__nav-bar__list--active"><a style="color:#FFFFFF"
-                        href="/index.html">Biography</a></li>
-                <li class="header__nav-bar__list__item2 header__nav-bar__list--inactive"><a style="color:#AFAFAF"
-                        href="/pages/shows.html">Shows</a></li>
+                <li class="header__nav-bar__list__item1 header__nav-bar__list--active"><a href="/index.html">Biography</a></li>
+                <li class="header__nav-bar__list__item2 header__nav-bar__list--inactive"><a href="/pages/shows.html">Shows</a></li>
             </ul>
         </nav>
     </header>
@@ -103,17 +101,18 @@
             </div>
             <form id="add-user-form" class="form">
                 <div class="form__container">
-                    <label class="form__label" for="user-name">NAME</label>
-                    <input placeholder="Enter your name" class="form__input" id="user-name" type="name" name="name">
+                    <label class="form__container__label" for="user-name">NAME</label>
+                    <input placeholder="Enter your name" class="form__container__input" id="user-name" type="name" name="name">
                 </div>
                 <div class="form__container">
-                    <label class="form__label" for="user-comment">COMMENT</label>
-                    <input placeholder="Add a new comment" class="form__input" id="user-comment" type="text"
+                    <label class="form__container__label" for="user-comment">COMMENT</label>
+                    <input placeholder="Add a new comment" class="form__container__input" id="user-comment" type="text"
                         name="text">
                 </div>
-                <button type="submit" class="form__btn">COMMENT</button>
+                <button type="submit" class="form__btn">COMMENT</button> 
             </form>
         </div>
+        <hr>
     </section>
     <section class="comments">
         <div class="comments__section"></div>

@@ -3,16 +3,6 @@
 
 .hero {
     background-image: url(/assets/images/hero-shows.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    height: 23rem;
-    width: 100%;
-    opacity: 50%;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 1rem;
     &__item1 {
         position: relative;
         color: $primary-text-color-white;
@@ -23,35 +13,36 @@
         width: 205px;
     }
     &__item3 {
+        padding-right: 1rem;
         position: relative;
     }
 }
-
-@include tablet{
+@include tablet {
     .hero {
-        background-position-y: -74px;
-        height: 27rem;
+        background-position-y: -95px;
+        height: 30rem;
         &__item1 {
             font-family: $primary-family-font;
-            font-size: $font-size-subhtd; 
+            font-size: $font-size-subhtd;
             padding-left: 2rem;
         }
         &__item2 {
             font-family: $secondary-family-font;
-            font-size: $font-size-shtd;
-            width: 360px;
+            font-size: 3rem;
+            line-height: 4rem;
+            width: 520px;
             padding-left: 2rem;
+            margin: 2rem 0 2rem 0;
         }
         &__item3 {
             font-family: $secondary-family-font;
             font-size: $font-size-phtd;
-            line-height: 4.25rem; 
+            line-height: 4.25rem;
             width: 50%;
             padding-left: 2rem;
         }
     }
 }
-
 @include desktop {
     .hero {
         display: flex;
@@ -63,25 +54,28 @@
         &__container {
             width: 50%;
             margin: 0 auto;
-            &__1 {     
+            &__1 {
                 padding-left: 5rem;
             }
             &__2 {
-                width: 300px;
-                padding-left: 5rem;  
+                width: 573px;
+                padding-left: 5rem;
+                font-size: 4rem;
+                line-height: 5rem;
+                margin: 1rem 0 5rem 0;
             }
         }
         &__item3 {
-           width: 50%;
-           margin: 0 auto;
+            width: 50%;
+            margin: 0 auto;
         }
     }
 }
-
 .shows {
     padding: 1rem;
     &__wrapper {
         &__container {
+            padding: 1rem;
             &__date {
                 &__label {
                     font-family: $secondary-family-font;
@@ -95,7 +89,7 @@
                     font-weight: 600;
                     line-height: 1.5rem;
                 }
-            } 
+            }
             &__venue {
                 &__label {
                     font-family: $secondary-family-font;
@@ -103,69 +97,90 @@
                     line-height: 1.25rem;
                     color: $secondary-color-silver;
                 }
-                &__text { 
+                &__text {
                     font-family: $primary-family-font;
                     font-size: $font-size-paragraphm;
                     line-height: 1.125rem;
                 }
             }
             &__location {
-                &__label { 
+                &__label {
                     font-family: $secondary-family-font;
                     font-size: $font-size-paragraphm;
                     color: $secondary-color-silver;
                     line-height: 1.25rem;
                 }
                 &__text {
-                    font-family: $primary-family-font; 
+                    font-family: $primary-family-font;
                     font-size: $font-size-paragraphm;
                     line-height: 1.125rem;
                 }
             }
             &__btn {
                 @include button;
-            } 
+            }
+
             &__divider2 {
                 display: none;
             }
         }
     }
     &__divider1 {
-        color: $secondary-color-silver;
+        border-color: $divider-line;
+        height: 1px;
     }
-} 
-
+}
 @include tablet {
     .shows {
         &__wrapper {
             &__container {
+                padding: 1.5rem 1.125rem;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                align-items: flex-end;
                 &__btn {
                     font-weight: 600;
                     width: 160px;
                 }
-            }    
+            }
+            &__container:hover {
+                background-color: $alternative-background-color;
+            }
+            &__container:active {
+                background-color: $divider-line;
+            }
+            &__container:not(:first-child) {
+                .shows__wrapper__container__date__label,
+                .shows__wrapper__container__venue__label,
+                .shows__wrapper__container__location__label {
+                    display: none;
+                }
+            }
         }
     }
 }
-
 @include desktop {
     .shows {
         display: flex;
         flex-direction: row;
-        width: 80%;
-        justify-content: space-between;
+        width: 100%;
+        justify-content: space-around;
         &__wrapper {
             display: flex;
             flex-direction: column;
-            width: 80%;
+            width: 70%;
+            &__container:not(:first-child) {
+                .shows__wrapper__container__date__label,
+                .shows__wrapper__container__venue__label,
+                .shows__wrapper__container__location__label {
+                    display: none;
+                }
+            }
         }
         &__divider1 {
-           color: $secondary-color-silver;
-           
+            border-color: $divider-line;
+            height: 1px;
         }
     }
 }
-

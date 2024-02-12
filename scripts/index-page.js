@@ -48,10 +48,13 @@ function displayComment(commentObj) {
     const comentText = document.createElement('p');
     comentText.classList.add('user__comment')
     comentText.innerText = commentObj.text;
+    
+    const dividerContainer = document.createElement('div');
+    dividerContainer.classList.add('divider__wrapper');
 
     const comentDivider = document.createElement('hr');
+    dividerContainer.appendChild(comentDivider);
 
-   
     comentWrapper.appendChild(comentName);
     comentWrapper.appendChild(comentTimestamp);
     commentSecWrep1.appendChild(commentImg);
@@ -59,11 +62,11 @@ function displayComment(commentObj) {
     commentSecWrep2.appendChild(comentText);
     comment.appendChild(commentSecWrep1);
     comment.appendChild(commentSecWrep2); 
-    comment.appendChild(comentDivider);
     commentsSection.appendChild(comment);
+    commentsSection.appendChild(dividerContainer);
 }
 
-// Related to form:
+
 const addUserForm = document.getElementById("add-user-form");
 const formErrors = document.getElementById("add-user-form-errors");
 
@@ -71,27 +74,31 @@ addUserForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const name = event.target.name.value;
     const text = event.target.text.value;
-    // Validation: If name is empty, show an error message and end event handler
+    const userNameInput = event.target.name;
+    const userCommentInput = event.target.text;
+   
     if (name === "") {
         formErrors.innerText = "Add your name";
+        userNameInput.style.borderColor = "#D22D2D";
         return;
     }
     if (text === "") {
-        formErrors.innerText = "Add your comment"
+        formErrors.innerText = "Add your comment";
+        userCommentInput.style.borderColor = "#D22D2D";
         return;
     }
-    // clear error messages on submit if all's good, then process form
+  
     formErrors.innerText = "";
-    // before this point, what do we want to validate for our input
+   
     const newComment = {
         name: name,
         text: text,
         timesheet: new Date().toLocaleDateString('en-GB'),
     }
     comments.unshift(newComment)
-    // Clear existing comments view
+  
     commentsSection.innerHTML = "";
-    // Re render the view
+  
     for (const index in comments) {
         displayComment(comments[index]);
     };
