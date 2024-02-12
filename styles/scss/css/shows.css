@@ -341,126 +341,117 @@ a:hover {
   }
 }
 .hero {
-  background-image: url(/assets/images/hero-bio.jpg);
+  background-image: url(/assets/images/hero-shows.jpg);
 }
-.hero__heading {
-  text-align: left;
+.hero__item1 {
+  position: relative;
   color: #FFFFFF;
-  padding-left: 1rem;
-  z-index: 1;
+}
+.hero__item2 {
+  position: relative;
+  color: #FFFFFF;
+  width: 205px;
+}
+.hero__item3 {
+  padding-right: 1rem;
+  position: relative;
 }
 
-.info {
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+@media (min-width: 768px) {
+  .hero {
+    background-position-y: -95px;
+    height: 30rem;
+  }
+  .hero__item1 {
+    font-family: "Avenir Regular", sans-serif;
+    font-size: 1.5rem;
+    padding-left: 2rem;
+  }
+  .hero__item2 {
+    font-family: "Avenir Demi", sans-serif;
+    font-size: 3rem;
+    line-height: 4rem;
+    width: 520px;
+    padding-left: 2rem;
+    margin: 2rem 0 2rem 0;
+  }
+  .hero__item3 {
+    font-family: "Avenir Demi", sans-serif;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    width: 50%;
+    padding-left: 2rem;
+  }
 }
-.info__heading {
-  text-align: left;
-  padding-left: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+@media (min-width: 1279px) {
+  .hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-position-y: -148px;
+    height: 35rem;
+    align-items: center;
+  }
+  .hero__container {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .hero__container__1 {
+    padding-left: 5rem;
+  }
+  .hero__container__2 {
+    width: 573px;
+    padding-left: 5rem;
+    font-size: 4rem;
+    line-height: 5rem;
+    margin: 1rem 0 5rem 0;
+  }
+  .hero__item3 {
+    width: 50%;
+    margin: 0 auto;
+  }
 }
-.info__figure {
-  margin: 1rem;
-}
-.info__figure__band-img {
-  width: 100%;
-}
-.info__figure__captions {
-  text-align: left;
-  display: flex;
-  padding-bottom: 1rem;
-}
-
-.subheader__container__heading {
-  text-align: left;
-  margin: 0;
-  padding-left: 1rem;
-}
-.subheader__container__paragraphs {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-}
-.subheader__container__paragraphs__1 {
+.shows {
   padding: 1rem;
-  margin: 0;
 }
-.subheader__container__paragraphs__2 {
-  padding: 1rem;
-  margin: 0;
-}
-
-.gallery {
-  background-color: #FAFAFA;
-  display: flex;
-  flex-direction: column;
-}
-.gallery__header {
-  text-align: left;
-  margin: 0;
+.shows__wrapper__container {
   padding: 1rem;
 }
-.gallery__container {
-  display: flex;
-  flex-direction: column;
-  margin-left: 1rem;
-  margin-right: 1rem;
+.shows__wrapper__container__date__label {
+  font-family: "Avenir Demi", sans-serif;
+  font-size: 0.813rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
 }
-.gallery__container__item {
-  width: 100%;
+.shows__wrapper__container__date__text {
+  font-family: "Avenir Demi", sans-serif;
+  font-size: 0.813rem;
+  font-weight: 600;
+  line-height: 1.5rem;
 }
-.gallery__container__item__photo {
-  padding: 0 0rem 1rem 0rem;
-  width: 100%;
-  margin: 0px;
+.shows__wrapper__container__venue__label {
+  font-family: "Avenir Demi", sans-serif;
+  font-size: 0.813rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
 }
-
-.conv__heading {
-  padding-left: 1rem;
+.shows__wrapper__container__venue__text {
+  font-family: "Avenir Regular", sans-serif;
+  font-size: 0.813rem;
+  line-height: 1.125rem;
 }
-.conv__wrapper {
-  margin: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.shows__wrapper__container__location__label {
+  font-family: "Avenir Demi", sans-serif;
+  font-size: 0.813rem;
+  color: #AFAFAF;
+  line-height: 1.25rem;
 }
-.conv__wrapper__container {
-  display: flex;
-  justify-content: center;
+.shows__wrapper__container__location__text {
+  font-family: "Avenir Regular", sans-serif;
+  font-size: 0.813rem;
+  line-height: 1.125rem;
 }
-.conv__wrapper__container__img {
-  object-fit: cover;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 50%;
-  margin-top: 1.5rem;
-}
-
-.form {
-  margin: 0 auto;
-  width: 80%;
-  border-radius: 4px;
-}
-.form__container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-.form__container__input {
-  padding-left: 12px;
-  height: 2.25rem;
-  background-color: #FAFAFA;
-  border-radius: 4px;
-  border: 1px solid #AFAFAF;
-}
-.form__container #user-comment {
-  padding-top: 1rem;
-  padding-bottom: 5rem;
-}
-.form__btn {
+.shows__wrapper__container__btn {
   font-family: "Avenir Demi", sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -473,214 +464,57 @@ a:hover {
   height: 3rem;
   text-align: center;
 }
-.form__btn:hover {
-  background-color: #000000;
+.shows__wrapper__container__divider2 {
+  display: none;
 }
-
-.form__container__input:focus {
-  border: 1px solid #323232;
-}
-
-.comments {
-  display: flex;
-  flex-direction: column;
-}
-.comments__section {
-  margin: 1rem;
-}
-.comments__section .article__wrapper {
-  display: flex;
-}
-.comments__avatar {
-  background-color: #E1E1E1;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 50%;
-  margin-top: 1rem;
-}
-.comments__section__wrapper2 {
-  margin: 1rem;
-}
-.comments__section .lable__wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.shows__divider1 {
+  border-color: #E1E1E1;
+  height: 1px;
 }
 
 @media (min-width: 768px) {
-  .hero {
-    height: 30rem;
-  }
-  .hero__heading {
-    font-family: "Avenir Demi", sans-serif;
-    font-size: 3.75rem;
-    line-height: 4.25rem;
-    padding-left: 2rem;
-  }
-  .info {
-    width: 90%;
-    justify-content: center;
-    margin: 0 auto;
-  }
-  .info__figure {
-    width: 86%;
-    margin: auto;
-  }
-  .info__figure__band-img {
-    margin: 0 auto;
-    padding-bottom: 1rem;
-  }
-  .info__figure__captions {
-    margin: 0 66px 0 0;
-    padding-bottom: 1rem;
-  }
-  .subheader__container {
-    margin: 0;
-  }
-  .subheader__container__heading {
-    margin: 3rem 0 1rem 0;
-    padding-left: 3.5rem;
-  }
-  .subheader__container__paragraphs {
-    width: 100%;
+  .shows__wrapper__container {
+    padding: 1.5rem 1.125rem;
+    display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    padding-bottom: 2rem;
+    justify-content: space-between;
+    align-items: flex-end;
   }
-  .subheader__container__paragraphs__1 {
-    padding: 0;
-    width: 39%;
+  .shows__wrapper__container__btn {
+    font-weight: 600;
+    width: 160px;
   }
-  .subheader__container__paragraphs__2 {
-    padding: 0;
-    width: 39%;
+  .shows__wrapper__container:hover {
+    background-color: #FAFAFA;
   }
-  .gallery {
-    padding: 1.25rem;
+  .shows__wrapper__container:active {
+    background-color: #E1E1E1;
   }
-  .gallery__container {
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-  .gallery__container__item {
-    width: 33.3333333333%;
-  }
-  .gallery__container__item__photo {
-    padding: 0 0rem 1.5rem 0rem;
-    width: 90%;
-  }
-  .conv__heading {
-    padding-left: 2rem;
-  }
-  .conv__wrapper {
-    justify-content: space-around;
-    margin: 1rem 7rem;
-  }
-  .conv hr {
-    margin: 0 auto;
-    width: 80%;
-  }
-  .form {
-    margin: 0;
-  }
-  .form__btn {
-    background-color: #323232;
-    width: 150px;
-    float: right;
-  }
-  .form__btn:hover {
-    background-color: #000000;
-  }
-  .comments {
-    margin: 1rem 3rem 1rem 3rem;
-  }
-  .comments__section {
-    margin: 1rem 7rem;
-  }
-  .comments__section__wrapper2 {
-    margin: 1rem;
+  .shows__wrapper__container:not(:first-child) .shows__wrapper__container__date__label,
+  .shows__wrapper__container:not(:first-child) .shows__wrapper__container__venue__label,
+  .shows__wrapper__container:not(:first-child) .shows__wrapper__container__location__label {
+    display: none;
   }
 }
 @media (min-width: 1279px) {
-  .hero {
-    height: 35rem;
-  }
-  .hero__heading {
-    font-family: "Avenir Demi", sans-serif;
-    font-size: 3.75rem;
-    line-height: 4.25rem;
-    padding-left: 7rem;
-  }
-  .info {
-    width: 80%;
-    justify-content: center;
-    margin: 0 auto;
-  }
-  .info__figure {
-    width: 79%;
-    margin: auto;
-  }
-  .info__figure__band-img {
-    margin: 0 auto;
-    padding-bottom: 1rem;
-  }
-  .info__figure__captions {
-    padding-bottom: 1rem;
+  .shows {
     display: flex;
-    margin: 0;
-    width: 100%;
-    justify-content: flex-start;
-  }
-  .subheader__container__heading {
-    margin: 3rem 0 1rem 0;
-    padding-left: 7.375rem;
-  }
-  .subheader__container__paragraphs {
-    width: 100%;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 3.125rem;
-    padding-bottom: 2rem;
+    width: 100%;
+    justify-content: space-around;
   }
-  .subheader__container__paragraphs__1 {
-    padding: 0;
-    width: 37%;
+  .shows__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
   }
-  .subheader__container__paragraphs__2 {
-    padding: 0;
-    width: 37%;
+  .shows__wrapper__container:not(:first-child) .shows__wrapper__container__date__label,
+  .shows__wrapper__container:not(:first-child) .shows__wrapper__container__venue__label,
+  .shows__wrapper__container:not(:first-child) .shows__wrapper__container__location__label {
+    display: none;
   }
-  .gallery {
-    padding: 0 5rem;
+  .shows__divider1 {
+    border-color: #E1E1E1;
+    height: 1px;
   }
-  .gallery__header {
-    padding: 1rem 0 1rem 5rem;
-  }
-  .gallery__container {
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-  .gallery__container__item {
-    width: calc(33.3333333333% - 2rem);
-  }
-  .gallery__container__item__photo {
-    padding: 0 1rem 1.2rem 1rem;
-    width: 90%;
-  }
-  .conv__heading {
-    padding-left: 10rem;
-  }
-  .conv__wrapper {
-    margin: 1rem 20rem;
-  }
-  .conv hr {
-    margin: 0 auto;
-    width: 90%;
-  }
-  .comments__section {
-    margin: 1rem 20rem;
-  }
-}/*# sourceMappingURL=bio.css.map */
+}/*# sourceMappingURL=shows.css.map */

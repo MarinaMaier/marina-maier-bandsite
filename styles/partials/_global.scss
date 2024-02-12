@@ -1,0 +1,392 @@
+$primary-color-black: #323232;
+$secondary-color-silver: #AFAFAF;
+$primary-text-color-white: #FFFFFF;
+$hover-state-color: #000000;
+$divider-line: #E1E1E1;
+$alternative-background-color: #FAFAFA;
+$primary-family-font: 'Avenir Regular', sans-serif;
+$secondary-family-font: 'Avenir Demi', sans-serif;
+$third-family-font: 'Avenir Bold', sans-serif;
+$font-size-phm: 1.5rem;
+$font-size-shm: 1.5rem;
+$font-size-subhm: 0.875rem;
+$font-size-paragraphm: 0.813rem;
+$font-size-footerm: 0.813rem;
+$font-size-lbm: 0.625;
+$font-size-phtd: 3.75rem;
+$font-size-shtd: 2.25rem;
+$font-size-subhtd: 1.5rem;
+$font-size-paragraphtd: 0.875rem;
+$font-size-footertd: 0.875rem;
+$font-size-lbtd: 0.75rem;
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1279px;
+
+// *{
+//   border: 1px red solid;
+// }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet){
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin paragraph-fontsize {
+  font-size: $font-size-paragraphtd;
+  line-height: 1.375rem;
+}
+
+@mixin h1-font-size {
+  font-family: $secondary-family-font;
+  font-size: $font-size-phtd;
+  line-height: 4.25rem;
+}
+
+@mixin h2-font-size {
+  font-size: $font-size-shtd;
+  line-height: 2.75rem;
+}
+
+@mixin active-item {
+  width: 50%;
+  text-align: center;
+  color: $primary-text-color-white;
+  border-bottom: 5px solid $alternative-background-color;
+  text-decoration: none;
+}
+
+@mixin inactive-item {
+  width: 50%;
+  text-align: center;
+  color: $secondary-color-silver;
+  padding-bottom: 0.875rem;
+  text-decoration: none;
+}
+
+@mixin shows-heading {
+  font-family: $secondary-family-font;
+  font-size: $font-size-shm;
+  line-height: 2rem;
+}
+
+@mixin button {
+  font-family: $secondary-family-font;
+  font-size: $font-size-subhm;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: $primary-text-color-white;
+  background-color: $primary-color-black;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 3rem;
+  text-align: center;
+}
+
+@mixin label {
+  font-family: $secondary-family-font;
+  font-size: $font-size-subhm;
+  line-height: 1.375rem;
+}
+
+body {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+p {
+  font-family: $primary-family-font;
+  font-size: $font-size-footerm;
+  line-height: 1.125rem;
+  @include tablet {
+    @include paragraph-fontsize;
+  } 
+  @include desktop {
+    @include paragraph-fontsize;
+  }
+}
+h1 {
+  font-family: $secondary-family-font;
+  font-size: $font-size-phm;
+  line-height: 2rem;
+  @include tablet {
+    @include h1-font-size;
+  }
+  @include desktop {
+    @include h1-font-size;
+  }
+}
+h2 {
+  font-family: $secondary-family-font;
+  font-size: $font-size-shm;
+  line-height: 2rem;
+  @include tablet {
+    @include h2-font-size;
+  }
+  @include desktop {
+    @include h2-font-size;
+  }
+}
+h3 {
+  font-family: $primary-family-font;
+  font-size: $font-size-subhm;
+  line-height: 1.375rem;
+}
+ul {
+  li {
+    font-family: $primary-family-font;
+    font-size: $font-size-paragraphm;
+    line-height: 1.125rem;
+  }
+}
+a {
+  color: $divider-line;
+}
+a.header__nav-bar__list--inactive {
+  color: $divider-line; 
+}
+a:hover {
+  color: $primary-text-color-white;
+  padding-bottom: 26px;
+  border-bottom: 5px solid $alternative-background-color;
+}
+.form__container__input {
+  font-family: $primary-family-font;
+  font-size: $font-size-footerm;
+  line-height: 1.125rem;
+}
+.form__container__label {
+  @include label;
+  color: $divider-line;
+}
+.label__wrapper__name {
+  @include label;
+  color: $primary-color-black;
+}
+.label__wrapper__timestamp {
+  @include label;
+  color: $secondary-color-silver;
+}
+// header
+.header {
+  background-color: $primary-color-black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  &__image {
+      display: flex;
+      justify-content: center;
+      width: 120px;
+      height: 20px;
+      margin: 1rem auto;
+  }
+  &__nav-bar {
+      &__list {
+          display: flex;
+          flex-direction: row;
+          margin: 0 auto;
+          padding: 0;
+          list-style-type: none;
+          &__item1 {
+              width: 50%;
+              text-align: center;
+              height: 3rem;
+          }
+          &__item2 {
+              width: 50%;
+              text-align: center;
+          }
+          &--active {
+            color: $primary-text-color-white;
+            border-bottom: 5px solid $alternative-background-color;
+          }
+      }
+  }
+}
+@include tablet {
+  .header { 
+    flex-direction: row;
+    align-items: center;
+    padding-left: 2.25rem;
+    gap: 4rem;
+    &__image {
+        margin: 0;
+        gap: 2rem;
+    } 
+    &__nav-bar {
+        &__list {
+            gap:  4rem;
+            &__item1 {
+              margin-top: 2rem;
+            }
+            &__item2 {
+              margin-top: 2rem;
+            }
+        }
+    }
+  }
+}
+
+@include desktop {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 8rem;
+    gap: 4rem;
+  }
+}
+.info__figure__captions {
+  font-family: $secondary-family-font;
+  font-size: $font-size-paragraphm;
+  line-height: 1.125rem;
+  @include tablet {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+  @include desktop {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+}
+// Hero section
+.hero {
+  background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    height: 23rem;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 1rem;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 23rem;
+        background-color: $primary-color-black; 
+        opacity: 50%;
+    }
+}
+@include tablet {
+  .hero::before {
+    height: 30rem;
+  }
+}
+@include desktop {
+  .hero::before {
+    height: 35rem;
+  }
+}
+// Footer
+.main__footer {
+    background-color: $primary-color-black;
+    color: $primary-text-color-white;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    &__social {
+        &__icons{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        } 
+    &__logo--right-angle {
+        display: none;
+    }
+    }
+    &__address {
+        display: flex;
+        flex-direction: column;       
+    } 
+    &__contact1 {
+        display: flex;
+        flex-direction: column;
+    }      
+    &__contact2 {
+        display: flex;
+        flex-direction: column;
+    }      
+    &--no-margin {
+            margin: 0;
+        }
+    &__logo {
+        display: flex;
+        padding-top: 2.25rem;
+    }  
+}
+@include tablet {
+  .main__footer {
+    &__social {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 1.25rem;
+        &__icons {
+            gap: 1.563rem;
+            margin: 0 2.5rem;
+        }
+    
+        &__logo--right-angle {
+            display: flex;
+            margin-left: 11.563rem;
+        }
+    }
+    &__container {
+        display: flex;
+        margin: 0 auto;
+        gap: 3.438rem;
+    }
+    &__logo {
+        display: none;
+    }
+    &__copyright {
+        padding: 1rem;
+    }
+  }
+}
+@include desktop {
+  .main__footer {
+    padding: 0 8.125rem;
+    &__social {
+        display: flex;
+        justify-content: space-around;
+        padding-left: 1.25rem;
+        &__icons {
+            gap: 1.563rem;
+            margin-left: 4.5rem;
+        }
+        &__logo--right-angle {
+            display: flex;
+            margin-left: 27.75rem;
+        }
+    }
+    &__container {
+        display: flex;
+        margin-left: 1.25rem;
+        gap: 5.5rem;
+    }
+    &__logo {
+        display: none;
+    }
+    &__copyright {
+        padding: 1rem;
+    }
+  }
+}
