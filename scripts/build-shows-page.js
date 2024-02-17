@@ -1,62 +1,22 @@
-// <article class="shows__wrapper">
-//     <div class="shows__wrapper__container">
-//         <div class="shows__wrapper__container__date">
-//             <p class="shows__wrapper__container__date__label">DATE</p>
-//             <p class="shows__wrapper__container__date__text">Mon Sept</p>
-//         </div>
-//         <div class="shows__wrapper__container__venue">
-//             <p class="shows__wrapper__container__venue__label">VENUE</p>
-//             <p class="shows__wrapper__container__venue__text">Ronald Lane</p>
-//         </div>
-//         <div class="shows__wrapper__container__location">
-//             <p class="shows__wrapper__container__location__label">LOCATION</p>
-//             <p class="shows__wrapper__container__location__text">San</p>
-//         </div>
-//         <button class="shows__wrapper__container__btn">BUY TICKETS</button>
-//         <div class="shows__wrapper__container__divider2"><hr></div>
-//     </div>
-//     <div class="shows__wrapper__divider1"><hr></div>
-// </article>
+import { getApiKey } from './band-site-api.js'
+import { BandSiteApi } from './band-site-api.js';
 
-const shows = [
-  {
-    date: "Mon Sept 09 2024",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 17 2024",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Oct 12 2024",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 16 2024",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 29 2024",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 18 2024",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+const apiKey = await getApiKey(); 
+getAndDisplayShows();
 
-for (const index in shows) {
-  displayShows(shows[index], parseInt(index));
+async function getAndDisplayShows() {
+  try {
+    const shows = await new BandSiteApi(apiKey).getShows(); 
+    console.log(shows)
+    for (const index in shows) {
+      displayShows(shows[index]);
+    }
+  } catch (error) {
+    console.error('Failed getting shows:', error);
+  }
 }
 
 function displayShows(showsObj) {
-
   const showContainer = document.createElement('div');
   showContainer.classList.add('shows__wrapper__container');
 
@@ -69,7 +29,7 @@ function displayShows(showsObj) {
 
   const showLabelDateText = document.createElement('p');
   showLabelDateText.classList.add('shows__wrapper__container__date__text');
-  showLabelDateText.textContent = showsObj.date;
+  showLabelDateText.textContent = new Date(showsObj.date).toLocaleDateString();
 
   const showContainerVenue = document.createElement('div');
   showContainerVenue.classList.add('shows__wrapper__container__venue');
@@ -80,7 +40,7 @@ function displayShows(showsObj) {
 
   const showLabelVenueText = document.createElement('p');
   showLabelVenueText.classList.add('shows__wrapper__container__venue__text');
-  showLabelVenueText.textContent = showsObj.venue;
+  showLabelVenueText.textContent = showsObj.place;
 
   const showContainerLocation = document.createElement('div');
   showContainerLocation.classList.add('shows__wrapper__container__location');
@@ -125,4 +85,3 @@ function displayShows(showsObj) {
   divider1.appendChild(divider);
   showsWrapper.appendChild(divider1);
 }
-

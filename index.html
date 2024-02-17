@@ -13,8 +13,10 @@
         <a href="/index.html"><img src="/assets/logos/Logo-bandsite.svg" alt="logo" class="header__image"></a>
         <nav classs="header__nav-bar">
             <ul class="header__nav-bar__list">
-                <li class="header__nav-bar__list__item1 header__nav-bar__list--active"><a href="/index.html">Biography</a></li>
-                <li class="header__nav-bar__list__item2 header__nav-bar__list--inactive"><a href="/pages/shows.html">Shows</a></li>
+                <li class="header__nav-bar__list__item1 header__nav-bar__list--active"><a
+                        href="/index.html">Biography</a></li>
+                <li class="header__nav-bar__list__item2 header__nav-bar__list--inactive"><a
+                        href="/pages/shows.html">Shows</a></li>
             </ul>
         </nav>
     </header>
@@ -102,14 +104,15 @@
             <form id="add-user-form" class="form">
                 <div class="form__container">
                     <label class="form__container__label" for="user-name">NAME</label>
-                    <input placeholder="Enter your name" class="form__container__input" id="user-name" type="name" name="name">
+                    <input placeholder="Enter your name" class="form__container__input" id="user-name" type="name"
+                        name="name">
                 </div>
                 <div class="form__container">
                     <label class="form__container__label" for="user-comment">COMMENT</label>
                     <input placeholder="Add a new comment" class="form__container__input" id="user-comment" type="text"
                         name="text">
                 </div>
-                <button type="submit" class="form__btn">COMMENT</button> 
+                <button type="submit" class="form__btn">COMMENT</button>
             </form>
         </div>
         <hr>
@@ -150,6 +153,9 @@
         <img class="main__footer__logo" src="/assets/logos/Logo-bandsite.svg" alt="logo">
         <p class="main__footer__copyright">Copyright The Bees Knees © 2023 All Rights Reserved</p>
     </footer>
-    <script src="/scripts/index-page.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/scripts/band-site-api.js" type="module"></script>
+    <script src="/scripts/index-page.js" type="module"></script>
 </body>
+
 </html>
