@@ -1,27 +1,23 @@
-const commentsSection = document.querySelector(".comments__section");
-const comments = [
-    {
-        name: 'Victor Pinto',
-        timesheet: '11/02/2023',
-        text: 'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.'
-    },
-    {
-        name: 'Christina Cabrera',
-        timesheet: '10/28/2023',
-        text: 'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.'
-    },
-    {
-        name: 'Isaac Tadesse',
-        timesheet: '10/20/2023',
-        text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-    }
-];
+import { getApiKey } from './band-site-api.js';
+import { BandSiteApi } from './band-site-api.js';
 
-for (const index in comments) {
-    displayComment(comments[index]);
-};
+const apiKey = await getApiKey();
+let comments = [];
+getAndDisplayComments();
+
+async function getAndDisplayComments() {
+    try {
+        comments = await new BandSiteApi(apiKey).getComments();
+        for (let i = comments.length - 1; i >= 0; i--) {
+            displayComment(comments[i]);
+        }
+    } catch (error) {
+        console.error('Failed getting comments:', error);
+    }
+}
 
 function displayComment(commentObj) {
+    const commentsSection = document.querySelector(".comments__section");
     const comment = document.createElement('article');
     comment.classList.add('article__wrapper');
 
@@ -43,12 +39,12 @@ function displayComment(commentObj) {
 
     const comentTimestamp = document.createElement('label');
     comentTimestamp.classList.add('label__wrapper__timestamp')
-    comentTimestamp.innerText = commentObj.timesheet;
+    comentTimestamp.innerText = new Date(commentObj.timestamp).toLocaleDateString();
 
     const comentText = document.createElement('p');
     comentText.classList.add('user__comment')
-    comentText.innerText = commentObj.text;
-    
+    comentText.innerText = commentObj.comment;
+
     const dividerContainer = document.createElement('div');
     dividerContainer.classList.add('divider__wrapper');
 
@@ -61,45 +57,52 @@ function displayComment(commentObj) {
     commentSecWrep2.appendChild(comentWrapper);
     commentSecWrep2.appendChild(comentText);
     comment.appendChild(commentSecWrep1);
-    comment.appendChild(commentSecWrep2); 
+    comment.appendChild(commentSecWrep2);
     commentsSection.appendChild(comment);
     commentsSection.appendChild(dividerContainer);
 }
 
-
 const addUserForm = document.getElementById("add-user-form");
+const userNameError = document.getElementById("user-name");
+const userCommentError = document.getElementById("user-comment");
 const formErrors = document.getElementById("add-user-form-errors");
 
-addUserForm.addEventListener("submit", (event) => {
+addUserForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const name = event.target.name.value;
-    const text = event.target.text.value;
-    const userNameInput = event.target.name;
-    const userCommentInput = event.target.text;
-   
+    const comment = event.target.text.value;
+    userNameError.style.borderColor = "";
+    userCommentError.style.borderColor = "";
+
+    let errors = "";
     if (name === "") {
-        formErrors.innerText = "Add your name";
-        userNameInput.style.borderColor = "#D22D2D";
+        errors += "Add your name\n";
+        userNameError.style.borderColor = "#D22D2D";
+    }
+    if (comment === "") {
+        errors += "Add your comment\n";
+        userCommentError.style.borderColor = "#D22D2D";
+    } 
+    formErrors.innerText = errors;
+    if (errors !== "") {
         return;
     }
-    if (text === "") {
-        formErrors.innerText = "Add your comment";
-        userCommentInput.style.borderColor = "#D22D2D";
-        return;
+    try {
+        const bandSiteApi = new BandSiteApi(apiKey);
+        const newComment = await bandSiteApi.postComment({
+            name: name,
+            comment: comment
+        });
+        comments.unshift(newComment);
+        const commentsSection = document.querySelector(".comments__section");
+        commentsSection.innerText = "";
+        for (const index in comments) {
+            displayComment(comments[index]);
+        }
+        event.target.name.value = "";
+        event.target.text.value = "";
+    } catch (error) {
+        console.error('Failed posting comment:', error);
+        console.log(error);
     }
-  
-    formErrors.innerText = "";
-   
-    const newComment = {
-        name: name,
-        text: text,
-        timesheet: new Date().toLocaleDateString('en-GB'),
-    }
-    comments.unshift(newComment)
-  
-    commentsSection.innerHTML = "";
-  
-    for (const index in comments) {
-        displayComment(comments[index]);
-    };
 });
