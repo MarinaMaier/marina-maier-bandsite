@@ -82,14 +82,13 @@ addUserForm.addEventListener("submit", async (event) => {
     if (comment === "") {
         errors += "Add your comment\n";
         userCommentError.style.borderColor = "#D22D2D";
-    } 
+    }
     formErrors.innerText = errors;
     if (errors !== "") {
         return;
     }
     try {
-        const bandSiteApi = new BandSiteApi(apiKey);
-        const newComment = await bandSiteApi.postComment({
+        const newComment = await new BandSiteApi(apiKey).postComment({
             name: name,
             comment: comment
         });

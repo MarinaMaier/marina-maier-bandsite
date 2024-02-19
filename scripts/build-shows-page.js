@@ -1,13 +1,12 @@
 import { getApiKey } from './band-site-api.js'
 import { BandSiteApi } from './band-site-api.js';
 
-const apiKey = await getApiKey(); 
+const apiKey = await getApiKey();
 getAndDisplayShows();
 
 async function getAndDisplayShows() {
   try {
-    const shows = await new BandSiteApi(apiKey).getShows(); 
-    console.log(shows)
+    const shows = await new BandSiteApi(apiKey).getShows();
     for (const index in shows) {
       displayShows(shows[index]);
     }

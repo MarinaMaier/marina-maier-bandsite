@@ -490,6 +490,10 @@ a:hover {
 }
 .comments__section .article__wrapper {
   display: flex;
+  width: 100%;
+}
+.comments__section .article__wrapper .comments__section__wrapper2 {
+  width: 100%;
 }
 .comments__avatar {
   background-color: #E1E1E1;
